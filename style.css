@@ -52,7 +52,10 @@ main{flex:1;display:flex;min-height:0;position:relative}
 /* Panel de capas */
 #side{width:340px;display:flex;flex-direction:column;border-right:1px solid var(--bd);background:var(--bg);z-index:500}
 #side .top{padding:10px;border-bottom:1px solid var(--bd)}
-#q{width:100%;padding:7px 10px;border:1px solid var(--bd);border-radius:6px;background:var(--bg2);color:var(--tx)}
+#q{width:100%;padding:7px 36px 7px 10px;border:1px solid var(--bd);border-radius:6px;background:var(--bg2);color:var(--tx)}
+.busca{position:relative}
+.qx{position:absolute;right:5px;top:50%;transform:translateY(-50%);width:26px;height:26px;padding:0;border:0;border-radius:50%;background:transparent;color:var(--mut);font-size:22px;line-height:1;display:grid;place-content:center}
+.qx:hover{background:var(--bd);color:var(--tx)}
 .tabs{display:flex;gap:6px;margin-top:8px}.tabs button{flex:1}
 #list{flex:1;overflow:auto;padding:6px 10px}
 .cat>summary{cursor:pointer;font-weight:600;padding:8px 0;display:flex;align-items:center;gap:8px;list-style:none}

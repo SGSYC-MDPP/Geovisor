@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>Geovisor municipal MDPP</title>
+<title>Geovisor municipal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Geovisor municipal de saneamiento y catastro">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231769d6'/%3E%3Cpath d='M16 6a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z' fill='%23fff'/%3E%3C/svg%3E">
@@ -12,7 +12,7 @@
 <body>
 <header>
   <!-- Logo: copia tu imagen en img/logo.png y aparecerá aquí. Si no existe, se omite sola. -->
-  <img class="logo" src="img/LOGO_ESCUDO.png" alt="Logo de la municipalidad" onerror="this.remove()">
+  <img class="logo" src="img/logo.png" alt="Logo de la municipalidad" onerror="this.remove()">
   <h1>Geovisor Municipal</h1>
   <span class="sep"></span>
   <p class="sub">Subgerencia de Saneamiento y Catastro</p>
@@ -30,7 +30,10 @@
 <main>
   <aside id="side">
     <div class="top">
-      <input id="q" placeholder="Buscar capa o elemento…" autocomplete="off" aria-label="Buscar capa o elemento">
+      <div class="busca">
+        <input id="q" placeholder="Buscar capa o elemento…" autocomplete="off" aria-label="Buscar capa o elemento">
+        <button id="qx" class="qx" type="button" title="Cerrar búsqueda (Esc)" aria-label="Cerrar búsqueda" hidden>&times;</button>
+      </div>
       <div class="tabs"><button id="tAll" class="on">Todas</button><button id="tAct">Activas (0)</button></div>
     </div>
     <div id="res" hidden></div>

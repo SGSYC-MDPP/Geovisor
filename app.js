@@ -17,7 +17,7 @@ const $ = id => {
   return e;
 };
 const base = $('base'), bHome = $('bHome'), bShare = $('bShare'), bClear = $('bClear'),
-      q = $('q'), tAll = $('tAll'), tAct = $('tAct'), res = $('res'), list = $('list'),
+      q = $('q'), qx = $('qx'), tAll = $('tAll'), tAct = $('tAct'), res = $('res'), list = $('list'),
       zi = $('zi'), zo = $('zo'), bMed = $('bMed'), bLoc = $('bLoc'),
       med = $('med'), mD = $('mD'), mA = $('mA'), mr = $('mr'), mU = $('mU'), mB = $('mB'), mX = $('mX'),
       leg = $('leg'), legh = $('legh'), legb = $('legb'),
@@ -367,8 +367,8 @@ async function cargar(l){
 async function asegurar(l){
   if(l.g) return l.g;
   l.carga = l.carga || cargar(l);
-  try{ l.g = await l.carga; }
-  catch(e){ l.carga = null; throw e; }
+  try{ l.g = await l.carga; l.fallo = null; }
+  catch(e){ l.carga = null; l.fallo = e.message || String(e); throw e; }
   finally{ finProgreso(l); }
   return l.g;
 }
@@ -566,14 +566,14 @@ function buscarElementos(){
   tBusca = setTimeout(async () => {
     const capas = CAPAS.filter(l => l.buscar && l.file);
     if(!capas.length){ res.hidden = true; return; }
-    const pend = capas.filter(l => !l.g);
-    let fallos = 0;
+    const pend = capas.filter(l => !l.g && !l.fallo);   // las que ya fallaron no se reintentan en cada tecla
     if(pend.length){
       res.hidden = false; res.innerHTML = '<div class="rs-m">Preparando la búsqueda…</div>';
       const r = await Promise.allSettled(pend.map(asegurar));
-      fallos = r.filter(x => x.status === 'rejected').length;
-      if(id !== buscaId) return;   // el usuario siguió escribiendo: otra búsqueda tomó el relevo
+      r.forEach((x, i) => { if(x.status === 'rejected') console.error('Búsqueda: no se pudo cargar «' + pend[i].name + '»', x.reason); });
+      if(id !== buscaId) return;   // el usuario siguió escribiendo o cerró la búsqueda
     }
+    const fallidas = capas.filter(l => !l.g);
     const palabras = t.split(/\s+/);
     const hallados = []; let hayMas = false;
     for(const l of capas){
@@ -586,7 +586,7 @@ function buscarElementos(){
       }
     }
     res.innerHTML = '';
-    if(!hallados.length && !fallos){ res.hidden = true; return; }
+    if(!hallados.length && !fallidas.length){ res.hidden = true; return; }
     res.hidden = false;
     const tit = document.createElement('div');
     tit.className = 'rs-t';
@@ -600,7 +600,11 @@ function buscarElementos(){
       res.appendChild(b);
     });
     if(hayMas){ const m = document.createElement('div'); m.className = 'rs-m'; m.textContent = 'Hay más resultados: escribe más letras para afinar.'; res.appendChild(m); }
-    if(fallos){ const m = document.createElement('div'); m.className = 'rs-m'; m.textContent = 'Alguna capa no se pudo cargar para la búsqueda.'; res.appendChild(m); }
+    if(fallidas.length){
+      const m = document.createElement('div'); m.className = 'rs-m';
+      m.textContent = 'No se pudo cargar para la búsqueda: ' + fallidas.map(l => '«' + l.name + '» (' + (l.fallo || 'error') + ')').join('; ') + '. Detalles en la consola (F12).';
+      res.appendChild(m);
+    }
   }, 250);
 }
 
@@ -709,7 +713,16 @@ function refresh(){
   guardarHash();
 }
 
-q.oninput = () => { render(); buscarElementos(); };
+// Cierra la búsqueda: vacía el cuadro, oculta los resultados y vuelve a mostrar todo el panel de capas.
+function cerrarBusqueda(){
+  q.value = ''; qx.hidden = true;
+  clearTimeout(tBusca); buscaId++;           // cancela cualquier búsqueda pendiente o en curso
+  res.hidden = true; res.innerHTML = '';
+  render(); q.focus();
+}
+q.oninput = () => { qx.hidden = !q.value; render(); buscarElementos(); };
+qx.onclick = cerrarBusqueda;
+q.onkeydown = e => { if(e.key === 'Escape' && q.value) cerrarBusqueda(); };
 tAll.onclick = () => { soloActivas = false; tAll.className = 'on'; tAct.className = ''; render(); };
 tAct.onclick = () => { soloActivas = true; tAct.className = 'on'; tAll.className = ''; render(); };
 legh.onclick = () => leg.classList.toggle('shut');
@@ -722,4 +735,3 @@ refresh();
   await Promise.all(CAPAS.filter(l => pedidas.includes(l.slug)).map(l => toggle(l, true)));
   listo = true; guardarHash();
 })();
-
