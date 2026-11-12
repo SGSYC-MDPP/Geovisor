@@ -157,7 +157,7 @@ const POPUPS = {
 const CATEGORIAS = [
   // Aquí cada capa de «Ámbitos» tiene su propia simbología (mira el cuadrito del panel).
   { id:'ambitos', nombre:'Ámbitos urbanos', color:'#7a3db8', nivel:1, s:.05, p:.8, capas:[
-    { n:'Límite provincial',    estilo:{ color:'#7a3db8', grosor:3, relleno:false, discontinua:'6 5' } },
+   // { n:'Límite provincial',    estilo:{ color:'#7a3db8', grosor:3, relleno:false, discontinua:'6 5' } },
 
     // CAPA REAL: usa una receta de estilo y otra de popup, con su ficha «i» y búsqueda por columnas
     { n:'COFOPRI', f:'data/COFOPRI-PY.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
