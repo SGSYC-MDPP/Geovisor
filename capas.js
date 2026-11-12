@@ -190,6 +190,5 @@ const CATEGORIAS = [
     // Ejemplo de una capa pesada, coloreada por área, con su ficha y búsqueda por código de lote:
     // { n:'Lotes catastrales', f:'data/lotes.geojson', z:15, fecha:'2026-11-01',
     //   buscar:['COD_LOTE'], estilo:ESTILOS.lotesPorArea, popup:POPUPS.lote },
-    'Lotes catastrales', 'Lotes vacíos', 'Lotes de uso público', 'Lotes por uso de suelo',
-    'Lotes con edificación', 'Lotes subutilizados', 'Lotes con habilitación pendiente' ]}
+    'Lotes COFOPRI', 'Lotes Hab. Urbana', 'Lotes Ord. N.038', 'Lotes Semirusticos' ]}
 ];
