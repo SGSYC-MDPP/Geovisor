@@ -1,0 +1,194 @@
+:root {
+  --tinta: #1d2a2e;
+  --tinta-suave: #5b6a6e;
+  --papel: #f9f8f4;
+  --linea: #d9d6cc;
+  --acento: #0f6b6f;
+  --acento-fondo: #e3efee;
+  --ancho-panel: 320px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  color: var(--tinta);
+  font-size: 15px;
+  line-height: 1.4;
+}
+#mapa { position: absolute; inset: 0; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+/* =====================================================================
+   PANEL DE CAPAS (plugin Leaflet Panel Layers, con nuestro tema)
+   ===================================================================== */
+.panel-geovisor.leaflet-panel-layers {
+  width: var(--ancho-panel);
+  max-width: calc(100vw - 40px);
+  min-width: 0;
+  padding: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  border: 1px solid var(--linea);
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(29, 42, 46, .18);
+  overflow: hidden;
+  font: 15px/1.4 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+}
+.panel-geovisor.oculto { display: none; }
+
+/* Título y subtítulo */
+.panel-geovisor > .leaflet-panel-layers-title {
+  display: block;
+  padding: 14px 16px 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.panel-geovisor .subtitulo {
+  margin: -8px 0 0;
+  padding: 0 16px 12px;
+  color: var(--tinta-suave);
+  font-size: .9rem;
+}
+
+/* La lista: capas arriba, mapa base abajo, con desplazamiento propio */
+.panel-geovisor .leaflet-panel-layers-list {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  overflow-y: auto;
+  border-top: 1px solid var(--linea);
+}
+.panel-geovisor .leaflet-panel-layers-overlays { order: 1; }
+.panel-geovisor .leaflet-panel-layers-separator { order: 2; height: 0; margin: 0; border-top: 1px solid var(--linea); }
+.panel-geovisor .leaflet-panel-layers-base { order: 3; }
+
+/* Grupos desplegables */
+.panel-geovisor .leaflet-panel-layers-group {
+  padding: 0; margin: 0;
+  border: 0; border-radius: 0; background: none;
+  overflow: visible;
+}
+.panel-geovisor .leaflet-panel-layers-group + .leaflet-panel-layers-group { border-top: 1px solid var(--linea); }
+.panel-geovisor .leaflet-panel-layers-group.collapsible:not(.expanded) { height: auto; }
+.panel-geovisor .leaflet-panel-layers-group.collapsible:not(.expanded) .leaflet-panel-layers-grouplabel { height: auto; }
+.panel-geovisor .leaflet-panel-layers-grouplabel {
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 12px;
+  font-weight: 700;
+  font-size: .92rem;
+}
+.panel-geovisor .leaflet-panel-layers-grouplabel:hover { background: var(--acento-fondo); }
+.panel-geovisor .leaflet-panel-layers-grouplabel .leaflet-panel-layers-icon {
+  width: 16px; min-width: 16px; height: auto; line-height: 1;
+  background: none; color: var(--acento); font-weight: 700; white-space: pre;
+}
+.panel-geovisor .leaflet-panel-layers-grouplabel .leaflet-panel-layers-selector {
+  position: static; visibility: visible; margin: 0 0 0 auto; float: none;
+  width: 16px; height: 16px; accent-color: var(--acento);
+}
+
+/* Cada capa */
+.panel-geovisor .leaflet-panel-layers-item,
+.panel-geovisor .leaflet-panel-layers-overlays .leaflet-panel-layers-item {
+  margin: 0;
+  padding: 6px 12px 8px;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  white-space: normal;
+  cursor: default;
+}
+.panel-geovisor .leaflet-panel-layers-overlays .leaflet-panel-layers-item:hover { border: 0; background: rgba(15, 107, 111, .05); }
+
+.panel-geovisor .leaflet-panel-layers-overlays .leaflet-panel-layers-item { position: relative; }
+.panel-geovisor .leaflet-panel-layers-overlays .leaflet-panel-layers-item .leaflet-panel-layers-title {
+  padding-right: 72px;   /* deja espacio al botón Acercar */
+}
+.panel-geovisor .leaflet-panel-layers-item .leaflet-panel-layers-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.panel-geovisor .leaflet-panel-layers-item .leaflet-panel-layers-selector {
+  order: -1; float: none; position: static; margin: 0;
+  width: 16px; height: 16px; flex: none; accent-color: var(--acento);
+}
+.panel-geovisor .leaflet-panel-layers-item .leaflet-panel-layers-icon {
+  float: none; flex: none; display: inline-flex; align-items: center;
+  width: auto; height: auto; line-height: 1; background: none;
+}
+
+/* Muestras de color (ícono de la capa y leyenda) */
+.muestra {
+  display: inline-block; flex: none;
+  width: 14px; height: 14px;
+  border: 2px solid; border-radius: 2px;
+}
+.muestra.punto { border-radius: 50%; }
+.muestra.linea { height: 4px; border: 0; border-radius: 2px; }
+
+/* Leyenda y botón dentro de cada capa */
+.capa-extra { margin: 4px 0 0 24px; }
+.leyenda { font-size: .85rem; color: var(--tinta-suave); }
+.leyenda li { display: flex; align-items: center; gap: 8px; }
+.leyenda li + li { margin-top: 3px; }
+.acercar {
+  position: absolute; top: 5px; right: 12px;
+  font: inherit; font-size: .8rem; line-height: 1.3;
+  padding: 2px 8px; color: var(--acento);
+  background: transparent; border: 1px solid var(--linea); border-radius: 4px; cursor: pointer;
+}
+.acercar:hover { background: var(--acento-fondo); border-color: var(--acento); }
+.capa-aviso { margin: 4px 0 0; font-size: .8rem; color: #a3341f; }
+.capa-aviso:empty { display: none; }
+
+.panel-geovisor .leaflet-panel-layers-base .leaflet-panel-layers-item { padding: 5px 12px; }
+.panel-geovisor .leaflet-panel-layers-base .leaflet-panel-layers-selector { float: none; }
+
+button:focus-visible, input:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+
+/* Botón para ocultar o mostrar el panel */
+#btn-panel {
+  position: absolute; z-index: 1100; top: 12px; right: 12px;
+  font: inherit; font-size: .88rem; padding: 6px 12px;
+  background: var(--papel); color: var(--tinta);
+  border: 1px solid var(--linea); border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(29, 42, 46, .18); cursor: pointer;
+}
+
+/* Ventanas emergentes */
+.leaflet-popup-content-wrapper { border-radius: 6px; }
+.leaflet-popup-content { margin: 12px 14px; font-family: inherit; font-size: .9rem; }
+.pop h3 { margin: 0 0 6px; font-size: 1rem; line-height: 1.25; }
+.pop table { border-collapse: collapse; width: 100%; }
+.pop th, .pop td { text-align: left; vertical-align: top; padding: 3px 0; }
+.pop th { padding-right: 12px; font-weight: 600; color: var(--tinta-suave); white-space: nowrap; }
+.pop tr + tr th, .pop tr + tr td { border-top: 1px solid #ece9df; }
+
+/* En celular el botón va abajo a la izquierda para no tapar el panel */
+@media (max-width: 640px) {
+  #btn-panel { top: auto; right: auto; bottom: 40px; left: 10px; }
+}
+
+/* Etiquetas permanentes sobre los elementos del mapa */
+.leaflet-tooltip.etiqueta-capa {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color: var(--tinta);
+  font-size: .8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  /* contorno blanco para que se lea sobre cualquier fondo */
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0 0 4px #fff;
+}
+.leaflet-tooltip.etiqueta-capa::before { display: none; }
