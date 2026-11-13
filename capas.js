@@ -322,23 +322,23 @@ const CATEGORIAS = [
     //   estilo:ESTILOS.zonificacion, popup:POPUPS.zona },
 
     //CAPA DE VIAS METROPOLITANAS 2025
-    { n:'VIAS_MET', f:'data/VIAS_MET.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
+    { n:'Vías Metropolitanas', f:'data/VIAS_MET.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
       buscar:['AMBITO'], estilo:ESTILOS.VIAS_MET, popup:POPUPS.VIAS_MET },
 
     //CAPA DE VIAS LOCALES
-    { n:'VIAS_LOCAL', f:'data/VIAS_LOCAL.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
+    { n:'Vías Locales', f:'data/VIAS_LOCAL.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
      estilo:ESTILOS.VIAS_LOCAL, popup:POPUPS.VIAS_LOCAL },
 
     //CAPA DE VIAS LOCALES 091
-    { n:'VIAS_LOCAL091', f:'data/VIAS_LOCAL091.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
+    { n:'Vías Ordenanza N.°091', f:'data/VIAS_LOCAL091.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
       estilo:ESTILOS.VIAS_LOCAL091, popup:POPUPS.VIAS_LOCAL091 },
 
     //CAPA DE VIAS LOCALES HUAMANTANGA
-    { n:'VIAS_HUAMANTANGA', f:'data/VIAS_HUAMANTANGA.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
+    { n:'Via La Cumbre Sr Huamantanga', f:'data/VIAS_HUAMANTANGA.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
      estilo:ESTILOS.VIAS_HUAMANTANGA, popup:POPUPS.VIAS_HUAMANTAGA },
 
     //CAPA DE VIAS LOCALES LA GRAMA
-    { n:'VIAS_LAGRAMA', f:'data/VIAS_LAGRAMA.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
+    { n:'Vias Locales - La Grama', f:'data/VIAS_LAGRAMA.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
      estilo:ESTILOS.VIAS_LAGRAMA, popup:POPUPS.VIAS_LAGRAMA }
     ]},
 
