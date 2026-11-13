@@ -335,7 +335,7 @@ const CATEGORIAS = [
 
     //CAPA DE VIAS LOCALES HUAMANTANGA
     { n:'VIAS_HUAMANTANGA', f:'data/VIAS_HUAMANTANGA.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
-     estilo:ESTILOS.VIAS_HUAMANTANGA, popup:POPUPS.VIAS_HUAMANTANGA },
+     estilo:ESTILOS.VIAS_HUAMANTANGA, popup:POPUPS.VIAS_HUAMANTAGA },
 
     //CAPA DE VIAS LOCALES LA GRAMA
     { n:'VIAS_LAGRAMA', f:'data/VIAS_LAGRAMA.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
