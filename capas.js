@@ -303,7 +303,7 @@ const CATEGORIAS = [
       buscar:['AMBITO'], estilo:ESTILOS.ORD_038, popup:POPUPS.ORD_038 },
     
     // CAPA PARCELACION RUSTICA
-    { n:'Parcelación', f:'data/COFOPRI-GJ.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
+    { n:'Parcelación', f:'data/P_RUSTICA.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
       buscar:['NOMBRE'], estilo:ESTILOS.P_RUSTICA, popup:POPUPS.P_RUSTICA }]},
 
   { id:'sectores', nombre:'Sectores', color:'#d9822b', nivel:2, s:.02, p:.5, capas:[
