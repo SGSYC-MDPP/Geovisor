@@ -107,16 +107,16 @@ const ESTILOS = {
     colores:{ 'COLECTORA':'#FAAC11', 
               'COLECTORA INTERDISTRITAL':'#F26B11',
               'ARTERIALES':'#68F72F',
-              'EXPRESA SUBREGIONAL':'#945400',
+              'EXPRESA SUB REGIONAL':'#945400',
               'EXPRESA METROPOLITANA':'#000000',
               'EXPRESA NACIONAL-REGIONAL':'#FA0C0C'},
 
     etiquetas:{ 'COLECTORA':'COLECTORA',
                 'COLECTORA INTERDISTRITAL':'Colectora Interdistrital',
                 'ARTERIALES':'Arterial',
-                'EXPRESA SUBREGIONAL':'Expresa Subregional',
+                'EXPRESA SUB REGIONAL':'Expresa Subregional',
                 'EXPRESA METROPOLITANA':'Expresa Metropolitana',
-                'EXPRESA NACIONAL-REGIONAL':'Expresa Nacional'},      
+                'EXPRESA NACIONAL - REGIONAL':'Expresa Nacional'},      
     
     colorBorde:'#555', grosor:1, defecto:'#cfd8dc'
   },
