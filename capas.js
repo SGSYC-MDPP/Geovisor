@@ -82,8 +82,7 @@ const ZOOM   = 12;                   // zoom inicial
    1. ESTILOS (recetas reutilizables). Crea las tuyas copiando una y cambiando los datos.
    --------------------------------------------------------------------- */
 const ESTILOS = {
-  // Un solo color, solo borde grueso
-  
+    
   COFOPRI:{ color:'#e9681288', colorBorde:'#fc7100', grosor:2, relleno:true},
  
   HAB_URBANA:{ color:'#19e9128c', colorBorde:'#04f804', grosor:2, relleno:true},
@@ -92,7 +91,7 @@ const ESTILOS = {
  
   P_RUSTICA:{ color:'#b409f87a', colorBorde:'#d908f5', grosor:2, relleno:true},
  
-  SECTOR:{ color:'#b409f87a', colorBorde:'#d908f5', grosor:2, relleno:true},
+  SECTOR:{ color:'#b409f87a', colorBorde:'#0408f3', grosor:2, relleno:false},
  
   ZONAS:{
     campo:'RefName',
@@ -122,21 +121,58 @@ const ESTILOS = {
   },
 
 
-  zonificacion:{
+  ZONIFI:{
     campo:'ZONA',
-    colores:{ 'RDM':'#f4d03f', 
-              'RDA':'#e67e22', 
-              'CZ':'#e74c3c', 
-              'I1':'#8e44ad', 
-              'ZRP':'#27ae60' },
+    colores:{ 'ZDM':'#ff9900', 
+              'ZRP':'#afc987', 
+              'ZDB-C':'#9e9405', 
+              'ZDA':'#eb1010', 
+              'ZRE-tr1':'#717171',
+              'ZRE-tr3':'#39806f',
+              'E1':'#c0e0f4',
+              'OU':'#adadad',
+              'I1':'#d7c7e1',
+              'I2':'#a8a2db',
+              'ZDB':'#ffff4b',
+              'ZRP-A':'#6da78f',
+              'ZP':'#201f20',
+              'ZPA':'#1bcece',
+              'ZDMB':'#feffcd',
+              'ZRE-A':'#3c2b44',
+              'H1':'#add7d8',
+              'ZDMA':'#730805',
+              'H2':'#87cdd3',
+              'I3':'#635882',
+              'ZRE-tr4':'#6db6c6',
+              'E2':'#8ec2e7',
+              'H3':'#72b9bb'
+             },
 
-    etiquetas:{ 'RDM':'Residencial densidad media', 
-                'RDA':'Residencial densidad alta',
-                'CZ':'Comercio zonal', 
-                'I1':'Industria elemental', 
-                'ZRP':'Recreación pública' },
+    etiquetas:{ 'ZDM':'Zona de Densidad Media', 
+              'ZRP':'Zona de Recreación Pública', 
+              'ZDB-C':'Zona de Densidad Baja Condicionada', 
+              'ZDA':'Zona de Densidad Alta', 
+              'ZRE-tr1':'Zona de Reglamentación Especial - Riesgo',
+              'ZRE-tr3':'#Zona de Reglamentación Especial - Recuperacion Suelo agricola',
+              'E1':'Educación Básica',
+              'OU':'Otros Usos',
+              'I1':'Industria Elemental ',
+              'I2':'Industria Liviana',
+              'ZDB':'Zona de Densidad Baja',
+              'ZRP-A':'Zona de Recreación Pública - Amortiguamiento',
+              'ZP':'Zona Expuesta a Peligros',
+              'ZPA':'Zona de Protección Ambiental',
+              'ZDMB':'Zona de Densida Muy Baja',
+              'ZRE-A':'Zonas Arqueológicas',
+              'H1':'Posta Medica',
+              'ZDMA':'Zona de Densidad Muy Alta',
+              'H2':'Centro de Salud',
+              'I3':'Gran Industria',
+              'ZRE-tr4':'Zona de Reglamentación Especial, mitigacion ambiental',
+              'E2':'Educación Superior Tecnológica',
+              'H3':'Hospital General' },
 
-    colorBorde:'#555', grosor:1, defecto:'#cfd8dc'
+    colorBorde:'#000000', grosor:1, defecto:'#cfd8dc'
   },
 
   VIAS_LOCAL:{ color:'#F72C05', grosor:3, relleno:false, discontinua:'6 6'},
@@ -147,7 +183,54 @@ const ESTILOS = {
 
   VIAS_HUAMANTANGA:{ color:'#F202EF', colorBorde:'#FFFFFF', grosor:2, relleno:true},
 
-  // Por rangos numéricos: colores según la columna AREA_M2
+  SIT_ARQ:{ color:'#b110e284', colorBorde:'#050505fe', grosor:2, relleno:true, discontinua:'6 6'},
+
+  SERVIDUMBRE:{ color:'#0a02f282', colorBorde:'#fb0606', grosor:2, relleno:true},
+
+  AREA_CR:{ color:'#0aff066f', colorBorde:'#3bfc06', grosor:2, relleno:true, discontinua:'6 6'},
+
+  ZR_NOMIT:{ color:'#f877068f', colorBorde:'#f78e04', grosor:2, relleno:true, discontinua:'6 6'},
+  
+  FAJA_MARGINAL:{ color:'#09b2f589', colorBorde:'#043fe1', grosor:2, relleno:true, discontinua:'6 6'},
+
+  CONCESION:{ color:'#a6fe029e', colorBorde:'#eb9f07', grosor:2, relleno:true},
+
+  SUB_CLAS_SUELO:{
+    campo:'NOMBRE',
+    colores:{ 'Urbano en Consolidación':'#fc911fb9', 
+              'Urbanizable Condicionado':'#a8086591', 
+              'Urbano Consolidado':'#faea989d', 
+              'Urbanizable Inmediato':'#ff0a708f', 
+              'Expuesto a Peligros':'#0d0d4d86',
+              'Conservación':'#a8a8a886'},
+
+    etiquetas:{ 'Urbano en Consolidación':'Urbano en Consolidación', 
+                'Urbanizable Condicionado':'Urbanizable Condicionado',
+                'Urbano Consolidado':'Urbano Consolidado', 
+                'Urbanizable Inmediato':'Urbanizable Inmediato', 
+                'Expuesto a Peligros':'Expuesto a Peligros',
+                'Conservación':'Conservación',
+               },
+
+    colorBorde:'#090909', grosor:2, defecto:'#cfd8dc'
+  },
+
+  CLAS_SUELO:{
+    campo:'ZONA',
+    colores:{ 'SUELO DE CONSERVACIÓN':'#1d2fa18d', 
+              'SUELO URBANIZABLE':'#f7d9928e', 
+              'SUELO URBANO':'#f27a118c' },
+
+    etiquetas:{ 'SUELO DE CONSERVACIÓN':'SUELO DE CONSERVACIÓN', 
+              'SUELO URBANIZABLE':'SUELO URBANIZABLE', 
+              'SUELO URBANO':'SUELO URBANO' },
+
+    colorBorde:'#555', grosor:1, defecto:'#cfd8dc'
+  },
+
+  OP_URBANA:{ color:'#543304a6', colorBorde:'#eb9f07', grosor:2, relleno:true},
+
+// Por rangos numéricos: colores según la columna AREA_M2
   lotesPorArea:{
     campo:'AREA_M2',
     rangos:[
@@ -158,16 +241,15 @@ const ESTILOS = {
     colorBorde:'#6b7280', grosor:1
   },
 
-  // Puntos: círculos naranjas con borde blanco
+// Puntos: círculos naranjas con borde blanco
   puntos:{ color:'#d9822b', colorBorde:'#ffffff', grosor:2, radio:7 },
 
-  // Línea de trazos (ej. vías en proyecto)
+// Línea de trazos (ej. vías en proyecto)
   proyecto:{ color:'#e11d48', grosor:3, relleno:false, discontinua:'8 6' }
 };
 
-/* ---------------------------------------------------------------------
-   2. POPUPS (recetas reutilizables)
-   --------------------------------------------------------------------- */
+
+
 const POPUPS = {
   // Funciona con el archivo de ejemplo limite_distrital.geojson (columnas NOMBRE, CODIGO, AREA_KM2)
   COFOPRI:{
@@ -265,6 +347,54 @@ const POPUPS = {
             pie:'Subgerencia de Saneamiento y Catastro'
   },
 
+  ZONIFI:{
+    titulo:'Zonificación PDU Lima Norte',
+    campos:[ { campo:'simb_zoni', etiqueta:'Simbolo'},
+             { campo:'sclas_zoni', etiqueta:'Descripción'} ],
+
+            pie:'Subgerencia de Saneamiento y Catastro'
+  },
+
+  SUB_CLAS_SUELO:{
+    titulo:'Subclasificación de Suelos',
+    campos:[ { campo:'NOMBRE', etiqueta:'Categoria'} ],
+
+            pie:'Subgerencia de Saneamiento y Catastro'
+  },
+
+  CLAS_SUELO:{
+    titulo:'Clasificación de Suelos',
+    campos:[ { campo:'tipo', etiqueta:'Descripción'} ],
+
+            pie:'Subgerencia de Saneamiento y Catastro'
+  },
+
+  OP_URBANA:{
+    titulo:'Operaciones Urbanas',
+    campos:[ { campo:'Nombre', etiqueta:'Tipo'} ],
+
+            pie:'Subgerencia de Saneamiento y Catastro'
+  },
+
+  SIT_ARQ:{
+    titulo:'Sitios Arqueológicos',
+    campos:[ { campo:'NOMBRE', etiqueta:'Nombre'},
+             { campo:'CATEGORIA', etiqueta:'Categoria'}],
+
+            pie:'Subgerencia de Saneamiento y Catastro'
+  },
+
+  CONCESION:{
+    titulo:'Concesiones Mineras',
+    campos:[ { campo:'NOMBRE', etiqueta:'Nombre'},
+             { campo:'CODIGO', etiqueta:'Código'},
+            { campo:'ESTADO', etiqueta:'Estado'}],
+
+            pie:'Subgerencia de Saneamiento y Catastro'
+  },
+
+
+
   // Para lotes: ficha con códigos traducidos y área con formato
   lote:{
     titulo:'Lote {COD_LOTE}',
@@ -282,39 +412,72 @@ const POPUPS = {
   }
 };
 
-/* ---------------------------------------------------------------------
-   3. CATEGORÍAS Y CAPAS
-   --------------------------------------------------------------------- */
+
 const CATEGORIAS = [
-  // Aquí cada capa de «Ámbitos» tiene su propia simbología (mira el cuadrito del panel).
+ 
   { id:'ambitos', nombre:'Ámbitos urbanos', color:'#7a3db8', nivel:1, s:.05, p:.8, capas:[
     //{ n:'Límite provincial',    estilo:{ color:'#7a3db8', grosor:3, relleno:false, discontinua:'6 5' } },
 
     // CAPA COFOPRI
-    { n:'COFOPRI', f:'data/COFOPRI-PY.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
-      buscar:['AMBITO'], estilo:ESTILOS.COFOPRI, popup:POPUPS.COFOPRI },
+    { n:'COFOPRI', 
+      f:'data/COFOPRI-PY.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      buscar:['AMBITO'], 
+      estilo:ESTILOS.COFOPRI, 
+      popup:POPUPS.COFOPRI },
     
     // CAPA HAB URBAN
-    { n:'Habilitación', f:'data/HAB_URBANA.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
-      buscar:['AMBITO'], estilo:ESTILOS.HAB_URBANA, popup:POPUPS.HAB_URBANA },
+    { n:'Habilitación', 
+      f:'data/HAB_URBANA.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      buscar:['AMBITO'], 
+      estilo:ESTILOS.HAB_URBANA, 
+      popup:POPUPS.HAB_URBANA },
     
     // CAPA ORDENANZA N.º38
-    { n:'Ordenanza N°038', f:'data/ORD_038.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
-      buscar:['AMBITO'], estilo:ESTILOS.ORD_038, popup:POPUPS.ORD_038 },
+    { n:'Ordenanza N°038', 
+      f:'data/ORD_038.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      buscar:['AMBITO'], 
+      estilo:ESTILOS.ORD_038, 
+      popup:POPUPS.ORD_038 },
     
     // CAPA PARCELACION RUSTICA
-    { n:'Parcelación', f:'data/P_RUSTICA.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
-      buscar:['NOMBRE'], estilo:ESTILOS.P_RUSTICA, popup:POPUPS.P_RUSTICA }]},
+    { n:'Parcelación', 
+      f:'data/P_RUSTICA.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      buscar:['NOMBRE'], 
+      estilo:ESTILOS.P_RUSTICA, 
+      popup:POPUPS.P_RUSTICA }]},
 
   { id:'sectores', nombre:'Sectores', color:'#d9822b', nivel:2, s:.02, p:.5, capas:[
     
     // CAPA SECTORES
-    { n:'Sectores', f:'data/SECTOR.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
-     estilo:ESTILOS.SECTOR, popup:POPUPS.SECTOR },
+    { n:'Sectores', 
+      f:'data/SECTOR.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+     estilo:ESTILOS.SECTOR, 
+     popup:POPUPS.SECTOR },
 
     // CAPA ZONAS DISTRITALES
-    { n:'Zonas', f:'data/ZONAS.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
-      buscar:['AMBITO'], estilo:ESTILOS.ZONAS, popup:POPUPS.SECTOR }]},
+    { n:'Zonas', 
+      f:'data/ZONAS.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      buscar:['AMBITO'], 
+      estilo:ESTILOS.ZONAS, 
+      popup:POPUPS.SECTOR }]},
 
   { id:'vias', nombre:'Vías', color:'#3366cc', nivel:3, s:.015, p:.45, capas:[
     // Ejemplo de zonificación (colores por categoría, con búsqueda por zona):
@@ -322,33 +485,152 @@ const CATEGORIAS = [
     //   estilo:ESTILOS.zonificacion, popup:POPUPS.zona },
 
     //CAPA DE VIAS METROPOLITANAS 2025
-    { n:'Vías Metropolitanas', f:'data/VIAS_MET.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
-      buscar:['AMBITO'], estilo:ESTILOS.VIAS_MET, popup:POPUPS.VIAS_MET },
+    { n:'Vías Metropolitanas', 
+      f:'data/VIAS_MET.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      buscar:['AMBITO'], 
+      estilo:ESTILOS.VIAS_MET, 
+      popup:POPUPS.VIAS_MET },
 
     //CAPA DE VIAS LOCALES
-    { n:'Vías Locales', f:'data/VIAS_LOCAL.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
-     estilo:ESTILOS.VIAS_LOCAL, popup:POPUPS.VIAS_LOCAL },
+    { n:'Vías Locales', 
+      f:'data/VIAS_LOCAL.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+     estilo:ESTILOS.VIAS_LOCAL, 
+     popup:POPUPS.VIAS_LOCAL },
 
     //CAPA DE VIAS LOCALES 091
-    { n:'Vías Ordenanza N.°091', f:'data/VIAS_LOCAL091.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
-      estilo:ESTILOS.VIAS_LOCAL091, popup:POPUPS.VIAS_LOCAL091 },
+    { n:'Vías Ordenanza N.°091', 
+      f:'data/VIAS_LOCAL091.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.VIAS_LOCAL091, 
+      popup:POPUPS.VIAS_LOCAL091 },
 
     //CAPA DE VIAS LOCALES HUAMANTANGA
-    { n:'Via La Cumbre Sr Huamantanga', f:'data/VIAS_HUAMANTANGA.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
-     estilo:ESTILOS.VIAS_HUAMANTANGA, popup:POPUPS.VIAS_HUAMANTAGA },
+    { n:'Via La Cumbre Sr Huamantanga', 
+      f:'data/VIAS_HUAMANTAGA.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+     estilo:ESTILOS.VIAS_HUAMANTANGA, 
+     popup:POPUPS.VIAS_HUAMANTAGA },
 
     //CAPA DE VIAS LOCALES LA GRAMA
-    { n:'Vias Locales - La Grama', f:'data/VIAS_LAGRAMA.geojson', fuente:'Municipalidad', escala:'1:25 000', fecha:'2026-11-01',
-     estilo:ESTILOS.VIAS_LAGRAMA, popup:POPUPS.VIAS_LAGRAMA }
+    { n:'Vias Locales - La Grama', 
+      f:'data/VIAS_LAGRAMA.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+     estilo:ESTILOS.VIAS_LAGRAMA, 
+     popup:POPUPS.VIAS_LAGRAMA }
     ]},
 
-  { id:'manzanas', nombre:'Manzanas', color:'#2a9d8f', nivel:4, s:.008, p:.35, capas:[
-    'Manzanas catastrales', 'Manzanas por zonificación', 'Manzanas con servicios',
-    'Manzanas en riesgo', 'Manzanas sin habilitar' ]},
+  { id:'normativa', nombre:'Información Normativa', color:'#2a9d8f', nivel:4, s:.008, p:.35, capas:[
+    
+    //SITIOS ARQUEOLÓGICOS
+    { n:'Sitios Arqueológicos', 
+      f:'data/SIT_ARQ.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.SIT_ARQ, 
+      popup:POPUPS.SIT_ARQ },
+      
+    //ZONIFICACION
+    { n:'Zonificación 2025', 
+      f:'data/ZONIFI.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.ZONIFI, 
+      popup:POPUPS.ZONIFI },
 
-  { id:'lotes', nombre:'Lotes', color:'#c0392b', nivel:5, s:.003, p:.25, capas:[
+    //AREAS DE SERVIDUMBRE
+    { n:'Área de Servidumbre', 
+      f:'data/SERVIDUMBRE.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.SERVIDUMBRE, 
+      popup:POPUPS.SERVIDUMBRE },
+
+    //ÁREAS DE CONSERVACION REGIONAL
+    { n:'Área de Conservacion Regional', 
+      f:'data/AREA_CR.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.AREA_CR, 
+      popup:POPUPS.AREA_CR },
+
+    //ZONA DE RIESGO NO MITIGABLE
+    { n:'Zona de Riesgo No Mitigable', 
+      f:'data/ZR_NOMIT.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.ZR_NOMIT, 
+      popup:POPUPS.ZR_NOMIT },
+
+    //FAJA MARGINAL DEL RIO CHILLON
+    { n:'Faja Marginal del Rio Chillón', 
+      f:'data/FAJA_MARGINAL.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.FAJA_MARGINAL, 
+      popup:POPUPS.FAJA_MARGINAL },
+
+    //CONCESIONES MINERAS
+    { n:'Concesiones Mineras', 
+      f:'data/CONCESION.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.CONCESION, 
+      popup:POPUPS.CONCESION }
+    ]},
+
+  { id:'tematica', nombre:'Información Temática', color:'#2a9d8f', nivel:5, s:.008, p:.35, capas:[
+    
+    //SUBCLASIFICACION SUELO
+    { n:'Subclasificación de Suelos', 
+      f:'data/SUB_CLAS_SUELO.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.SUB_CLAS_SUELO, 
+      popup:POPUPS.SUB_CLAS_SUELO },
+
+    //CLASIFICACION SUELO
+    { n:'Clasificación de Suelos', 
+      f:'data/CLAS_SUELO.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.CLAS_SUELO, 
+      popup:POPUPS.CLAS_SUELO },
+
+    //OPERACIONES URBANAS
+    { n:'Operaciones Urbanas', 
+      f:'data/OP_URBANA.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.OP_URBANA, 
+      popup:POPUPS.OP_URBANA },
+    
+    ]}];
+
+ // { id:'tematica', nombre:'Información Temática', color:'#c0392b', nivel:5, s:.003, p:.25, capas:[
     // Ejemplo de una capa pesada, coloreada por área, con su ficha y búsqueda por código de lote:
     // { n:'Lotes catastrales', f:'data/lotes.geojson', z:15, fecha:'2026-11-01',
     //   buscar:['COD_LOTE'], estilo:ESTILOS.lotesPorArea, popup:POPUPS.lote },
-    'Lotes COFOPRI', 'Lotes HAB. URBANA', 'Lotes ORD. 038', 'Lotes Rusticos']}
-];
+    //'Lotes COFOPRI', 'Lotes HAB. URBANA', 'Lotes ORD. 038', 'Lotes Rusticos']}
+

@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "ZR_NOMIT",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-11,
+"features": [
+{ "type": "Feature", "properties": { "NOMBRE": "Zona de Riesgo No Mitigable", "DESCRIPCIO": "Zonas de riesgo no mitigable son áreas con amenazas naturales o antrópicas que no pueden controlarse técnicamente, haciendo insegura su ocupación. Se declaran intangibles, prohibiendo construcciones y asentamientos para prevenir desastres", "DECRETO": "Resolución Ministerial N.º 061-2018-VIVIENDA" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -77.05099817631, -11.88841122865 ], [ -77.05215888949, -11.88922001839 ], [ -77.05280454282, -11.88966722924 ], [ -77.05534300304, -11.89285728032 ], [ -77.06082141294, -11.89891792677 ], [ -77.06326331236, -11.90144880372 ], [ -77.06382333648, -11.9026919564 ], [ -77.06717025352, -11.9083974569 ], [ -77.06866179645, -11.90902821219 ], [ -77.06953386476, -11.91027809304 ], [ -77.07110781555, -11.91330320773 ], [ -77.07214218787, -11.91636969462 ], [ -77.07302331299, -11.91596563005 ], [ -77.07232941474, -11.91342979383 ], [ -77.06968947812, -11.90780053488 ], [ -77.06748297503, -11.90727444818 ], [ -77.06486190663, -11.90169016781 ], [ -77.06376453276, -11.89976405904 ], [ -77.06115773859, -11.8972705414 ], [ -77.05841581175, -11.89387426032 ], [ -77.05510220334, -11.89012049066 ], [ -77.05184788465, -11.88724907853 ], [ -77.05099817631, -11.88841122865 ] ] ] ] } }
+]
+}
