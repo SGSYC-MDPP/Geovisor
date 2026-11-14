@@ -216,7 +216,7 @@ const ESTILOS = {
   },
 
   CLAS_SUELO:{
-    campo:'ZONA',
+    campo:'tipo',
     colores:{ 'SUELO DE CONSERVACIÓN':'#1d2fa18d', 
               'SUELO URBANIZABLE':'#f7d9928e', 
               'SUELO URBANO':'#f27a118c' },
