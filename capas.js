@@ -665,7 +665,7 @@ const CATEGORIAS = [
 
     //AREAS DE SERVIDUMBRE
     { n:'Área de Servidumbre', 
-      f:'data/AREA_CR.geojson', 
+      f:'data/SERVIDUMBRE.geojson', 
       fuente:'Municipalidad', 
       escala:'1:25 000', 
       fecha:'2026-11-01',
