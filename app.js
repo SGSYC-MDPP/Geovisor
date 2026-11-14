@@ -53,7 +53,7 @@ CATEGORIAS.forEach(c => c.capas.forEach(x => {
   CAPAS.push({
     cat:c, name:o.n, slug, file:o.f || null, minZoom:o.z || 0, buscar:o.buscar || null, popup:o.popup || null,
     fuente:o.fuente || 'Municipalidad', escala:o.escala || '—', fecha:o.fecha || '—',
-    formato:o.f ? 'GeoJSON' : 'Demo', op:o.opacidad != null ? Math.min(1, Math.max(.1, o.opacidad)) : .6, on:false, g:null, oculta:false,
+    formato:o.f ? 'GeoJSON' : 'Demo', op:o.opacidad != null ? Math.min(1, Math.max(.1, o.opacidad)) : 1, on:false, g:null, oculta:false,
     est:{
       color:       e.color || c.color,      // color de relleno (si no hay campo con colores/rangos)
       colorBorde:  e.colorBorde || null,    // color del borde (si no se indica, es el mismo del relleno)
