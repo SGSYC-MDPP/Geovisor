@@ -230,6 +230,12 @@ const ESTILOS = {
 
   OP_URBANA:{ color:'#543304a6', colorBorde:'#eb9f07', grosor:2, relleno:true},
 
+  CON_ING:{ color:'#543304a6', colorBorde:'#000000', grosor:2, relleno:true},
+  TECFLUSAC:{ color:'#14f708', colorBorde:'#ff0505', grosor:2, relleno:true},
+  CON_RING:{ color:'#29ff3b', colorBorde:'#000000', grosor:2, relleno:true},
+  SEDAPAL:{ color:'#00f2f2', colorBorde:'#000000', grosor:2, relleno:true},
+  CON_ESPERANZA:{ color:'#d707f7', colorBorde:'#000000', grosor:2, relleno:true},
+
 // Por rangos numéricos: colores según la columna AREA_M2
   lotesPorArea:{
     campo:'AREA_M2',
@@ -393,7 +399,113 @@ const POPUPS = {
             pie:'Subgerencia de Saneamiento y Catastro'
   },
 
+   CON_ING:{
+    titulo:'Consorcio Ingenieria',
+    campos:[ { campo:'EJECUTOR', etiqueta:'Ejecutor'},
+             { campo:'PROYECTO', etiqueta:'Proyecto'},
+             { campo:'CUI', etiqueta:'CUI'},
+             { campo:'PLAZO_EJEC', etiqueta:'Plazo de Ejecución'},
+             { campo:'ALCANCE', etiqueta:'Alcance'},
+             { campo:'BENEFICIAR', etiqueta:'Beneficiarios'},
+             { campo:'MONTO', etiqueta:'Monto'},
+             { campo:'ETAPA', etiqueta:'Etapa'},
+             { campo:'PUEBLOS', etiqueta:'N.º de Pueblos'},
+             { campo:'LOTES_BEN', etiqueta:'Lotes Beneficiarios'},
+             { campo:'SITUACION', etiqueta:'Estado'},      
+           ],
 
+            pie:'Subgerencia de Saneamiento y Catastro'
+  },
+
+    TECFLUSAC:{
+     titulo:'TECFLUSAC',
+     campos:[ { campo:'EJECUTOR', etiqueta:'Ejecutor'},
+             { campo:'PROYECTO', etiqueta:'Proyecto'},
+             { campo:'CUI', etiqueta:'CUI'},
+             { campo:'PLAZO_EJEC', etiqueta:'Plazo de Ejecución'},
+             { campo:'ALCANCE', etiqueta:'Alcance'},
+             { campo:'BENEFICIAR', etiqueta:'Beneficiarios'},
+             { campo:'MONTO', etiqueta:'Monto'},
+             { campo:'ETAPA', etiqueta:'Etapa'},
+             { campo:'PUEBLOS', etiqueta:'N.º de Pueblos'},
+             { campo:'LOTES_BEN', etiqueta:'Lotes Beneficiarios'},
+             { campo:'SITUACION', etiqueta:'Estado'},      
+           ],
+
+            pie:'Subgerencia de Saneamiento y Catastro'
+  },
+
+   CON_RING:{
+     titulo:'Consorcio REMA - Ingenieria',
+     campos:[ { campo:'EJECUTOR', etiqueta:'Ejecutor'},
+             { campo:'PROYECTO', etiqueta:'Proyecto'},
+             { campo:'CUI', etiqueta:'CUI'},
+             { campo:'PLAZO_EJEC', etiqueta:'Plazo de Ejecución'},
+             { campo:'ALCANCE', etiqueta:'Alcance'},
+             { campo:'BENEFICIAR', etiqueta:'Beneficiarios'},
+             { campo:'MONTO', etiqueta:'Monto'},
+             { campo:'ETAPA', etiqueta:'Etapa'},
+             { campo:'PUEBLOS', etiqueta:'N.º de Pueblos'},
+             { campo:'LOTES_BEN', etiqueta:'Lotes Beneficiarios'},
+             { campo:'SITUACION', etiqueta:'Estado'},      
+           ],
+
+            pie:'Subgerencia de Saneamiento y Catastro'
+  },
+
+   SEDAPAL:{
+     titulo:'SEDAPAL',
+     campos:[ { campo:'EJECUTOR', etiqueta:'Ejecutor'},
+             { campo:'PROYECTO', etiqueta:'Proyecto'},
+             { campo:'CUI', etiqueta:'CUI'},
+             { campo:'PLAZO_EJEC', etiqueta:'Plazo de Ejecución'},
+             { campo:'ALCANCE', etiqueta:'Alcance'},
+             { campo:'BENEFICIAR', etiqueta:'Beneficiarios'},
+             { campo:'MONTO', etiqueta:'Monto'},
+             { campo:'ETAPA', etiqueta:'Etapa'},
+             { campo:'PUEBLOS', etiqueta:'N.º de Pueblos'},
+             { campo:'LOTES_BEN', etiqueta:'Lotes Beneficiarios'},
+             { campo:'SITUACION', etiqueta:'Estado'},      
+           ],
+
+            pie:'Subgerencia de Saneamiento y Catastro'
+  },
+
+   CON_ISAIAS:{
+     titulo:'Consorcio ISAIAS',
+     campos:[ { campo:'EJECUTOR', etiqueta:'Ejecutor'},
+             { campo:'PROYECTO', etiqueta:'Proyecto'},
+             { campo:'CUI', etiqueta:'CUI'},
+             { campo:'PLAZO_EJEC', etiqueta:'Plazo de Ejecución'},
+             { campo:'ALCANCE', etiqueta:'Alcance'},
+             { campo:'BENEFICIAR', etiqueta:'Beneficiarios'},
+             { campo:'MONTO', etiqueta:'Monto'},
+             { campo:'ETAPA', etiqueta:'Etapa'},
+             { campo:'PUEBLOS', etiqueta:'N.º de Pueblos'},
+             { campo:'LOTES_BEN', etiqueta:'Lotes Beneficiarios'},
+             { campo:'SITUACION', etiqueta:'Estado'},      
+           ],
+
+            pie:'Subgerencia de Saneamiento y Catastro'
+  },
+
+   CON_ESPERANZA:{
+     titulo:'Consorcio ESPERANZA',
+     campos:[ { campo:'EJECUTOR', etiqueta:'Ejecutor'},
+             { campo:'PROYECTO', etiqueta:'Proyecto'},
+             { campo:'CUI', etiqueta:'CUI'},
+             { campo:'PLAZO_EJEC', etiqueta:'Plazo de Ejecución'},
+             { campo:'ALCANCE', etiqueta:'Alcance'},
+             { campo:'BENEFICIAR', etiqueta:'Beneficiarios'},
+             { campo:'MONTO', etiqueta:'Monto'},
+             { campo:'ETAPA', etiqueta:'Etapa'},
+             { campo:'PUEBLOS', etiqueta:'N.º de Pueblos'},
+             { campo:'LOTES_BEN', etiqueta:'Lotes Beneficiarios'},
+             { campo:'SITUACION', etiqueta:'Estado'},      
+           ],
+
+            pie:'Subgerencia de Saneamiento y Catastro'
+  },
 
   // Para lotes: ficha con códigos traducidos y área con formato
   lote:{
@@ -627,6 +739,63 @@ const CATEGORIAS = [
       popup:POPUPS.OP_URBANA },
     
     ]}];
+
+{ id:'proyectos', nombre:'Proyectos de Agua y Alcantarillado', color:'#2a9d8f', nivel:6, s:.008, p:.35, capas:[
+    
+    //CONSORCIO INGENIERIA
+    { n:'Consorcio Ingenieria', 
+      f:'data/CON_ING.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.CON_ING, 
+      popup:POPUPS.CON_ING },
+      
+    //TECFLUSAC
+    { n:'TECFLUSAC', 
+      f:'data/TECFLUSAC.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.TECFLUSAC, 
+      popup:POPUPS.TECFLUSAC },
+
+    //CONSORCIO REMA - INGENIERIA
+    { n:'Consorcio Rema Ingenieria', 
+      f:'data/CON_RING.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.CON_RING, 
+      popup:POPUPS.CON_RING },
+
+    //SEDAPAL
+    { n:'SEDAPAL', 
+      f:'data/SEDAPAL.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.SEDAPAL, 
+      popup:POPUPS.SEDAPAL },
+
+    //CONSORCIO ISAIAS
+    { n:'Consorcio Isaias', 
+      f:'data/CON_ISAIAS.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.CON_ISAIAS, 
+      popup:POPUPS.CON_ISAIAS },
+
+    //CONSORCIO ESPERANZA
+    { n:'Consorcio Esperanza', 
+      f:'data/CON_ESPERANZA.geojson', 
+      fuente:'Municipalidad', 
+      escala:'1:25 000', 
+      fecha:'2026-11-01',
+      estilo:ESTILOS.CON_ESPERANZA, 
+      popup:POPUPS.CON_ESPERANZA }
+    ]},
 
  // { id:'tematica', nombre:'Información Temática', color:'#c0392b', nivel:5, s:.003, p:.25, capas:[
     // Ejemplo de una capa pesada, coloreada por área, con su ficha y búsqueda por código de lote:
