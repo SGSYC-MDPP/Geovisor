@@ -115,7 +115,7 @@ const ESTILOS = {
                 'ARTERIALES':'Arterial',
                 'EXPRESA SUB REGIONAL':'Expresa Subregional',
                 'EXPRESA METROPOLITANA':'Expresa Metropolitana',
-                'EXPRESA NACIONAL - REGIONAL':'Expresa Nacional'},      
+                'EXPRESA NACIONAL-REGIONAL':'Expresa Nacional'},      
     
     colorBorde:'#555', grosor:1, defecto:'#cfd8dc'
   },
@@ -153,7 +153,7 @@ const ESTILOS = {
               'ZDB-C':'Zona de Densidad Baja Condicionada', 
               'ZDA':'Zona de Densidad Alta', 
               'ZRE-tr1':'Zona de Reglamentación Especial - Riesgo',
-              'ZRE-tr3':'#Zona de Reglamentación Especial - Recuperacion Suelo agricola',
+              'ZRE-tr3':'Zona de Reglamentación Especial - Recuperacion Suelo agricola',
               'E1':'Educación Básica',
               'OU':'Otros Usos',
               'I1':'Industria Elemental ',
@@ -162,7 +162,7 @@ const ESTILOS = {
               'ZRP-A':'Zona de Recreación Pública - Amortiguamiento',
               'ZP':'Zona Expuesta a Peligros',
               'ZPA':'Zona de Protección Ambiental',
-              'ZDMB':'Zona de Densida Muy Baja',
+              'ZDMB':'Zona de Densidad Muy Baja',
               'ZRE-A':'Zonas Arqueológicas',
               'H1':'Posta Medica',
               'ZDMA':'Zona de Densidad Muy Alta',
@@ -738,7 +738,7 @@ const CATEGORIAS = [
       estilo:ESTILOS.OP_URBANA, 
       popup:POPUPS.OP_URBANA },
     
-    ]}];
+    ]},
 
 { id:'proyectos', nombre:'Proyectos de Agua y Alcantarillado', color:'#2a9d8f', nivel:6, s:.008, p:.35, capas:[
     
@@ -795,7 +795,7 @@ const CATEGORIAS = [
       fecha:'2026-11-01',
       estilo:ESTILOS.CON_ESPERANZA, 
       popup:POPUPS.CON_ESPERANZA }
-    ]},
+    ]}];
 
  // { id:'tematica', nombre:'Información Temática', color:'#c0392b', nivel:5, s:.003, p:.25, capas:[
     // Ejemplo de una capa pesada, coloreada por área, con su ficha y búsqueda por código de lote:
