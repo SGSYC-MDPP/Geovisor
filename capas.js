@@ -709,7 +709,7 @@ const CATEGORIAS = [
       popup:POPUPS.CONCESION }
     ]},
 
-  { id:'tematica', nombre:'Información Temática', color:'#2a9d8f', nivel:5, s:.008, p:.35, capas:[
+  { id:'tematica', nombre:'Información Temática', color:'#EB0E0E', nivel:5, s:.008, p:.35, capas:[
     
     //SUBCLASIFICACION SUELO
     { n:'Subclasificación de Suelos', 
@@ -740,7 +740,7 @@ const CATEGORIAS = [
     
     ]},
 
-{ id:'proyectos', nombre:'Proyectos de Agua y Alcantarillado', color:'#2a9d8f', nivel:6, s:.008, p:.35, capas:[
+{ id:'proyectos', nombre:'Proyectos de Agua y Alcantarillado', color:'#0086ED', nivel:6, s:.008, p:.35, capas:[
     
     //CONSORCIO INGENIERIA
     { n:'Consorcio Ingenieria', 
