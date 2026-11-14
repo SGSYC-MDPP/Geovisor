@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "TECFLUSAC",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-11,
+"features": [
+{ "type": "Feature", "properties": { "EJECUTOR": "TECFLUSAC", "PLAZO_EJEC": null, "ALCANCE": null, "BENEFICIAR": null, "MONTO": null, "ETAPA": null, "PROYECTO": "Proyecto Colector Aliviadero San Nicolas y Ecualizador", "PUEBLOS": null, "LOTES_BEN": null, "CUI": null, "SITUACION": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -77.08508637751, -11.86190344223 ], [ -77.08575361197, -11.86124583798 ], [ -77.08378193299, -11.85917285342 ], [ -77.08309517904, -11.85991889878 ], [ -77.08200837924, -11.85887195657 ], [ -77.08176916866, -11.85908099983 ], [ -77.08305209404, -11.86032263073 ], [ -77.08377127178, -11.85953962566 ], [ -77.0853608299, -11.86122813309 ], [ -77.08487834206, -11.86173236474 ], [ -77.08508637751, -11.86190344223 ] ] ] ] } }
+]
+}
