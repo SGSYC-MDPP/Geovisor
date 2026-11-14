@@ -122,7 +122,7 @@ const ESTILOS = {
 
 
   ZONIFI:{
-    campo:'ZONA',
+    campo:'simb_zoni',
     colores:{ 'ZDM':'#ff9900', 
               'ZRP':'#afc987', 
               'ZDB-C':'#9e9405', 
@@ -553,7 +553,7 @@ const CATEGORIAS = [
 
     //AREAS DE SERVIDUMBRE
     { n:'Área de Servidumbre', 
-      f:'data/SERVIDUMBRE.geojson', 
+      f:'data/AREA_CR.geojson', 
       fuente:'Municipalidad', 
       escala:'1:25 000', 
       fecha:'2026-11-01',
