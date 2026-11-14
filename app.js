@@ -641,7 +641,7 @@ function render(){
       const gris = l.on && l.oculta;   // encendida pero oculta por estar muy lejos
       const r = document.createElement('div');
       r.className = 'ly' + (gris ? ' gris' : '');
-      r.innerHTML = '<label><input type="checkbox" ' + (l.on ? 'checked' : '') + '>' + chipDe(l) + '<span>' + esc(l.name) + '</span>' +
+      r.innerHTML = '<label><input type="checkbox" ' + (l.on ? 'checked' : '') + '>' + '<span>' + esc(l.name) + '</span>' +
         (l.on ? '<button class="z" title="Zoom a la capa" aria-label="Zoom a la capa">' + ICONO_ZOOM + '</button>' : '') +
         '<button class="i" title="Información" aria-label="Información">i</button></label>' +
         (l.minZoom ? '<div class="nota">' + (gris ? 'Oculta: acércate al zoom ' + l.minZoom + ' o más' : 'Visible desde el zoom ' + l.minZoom) + '</div>' : '') +
